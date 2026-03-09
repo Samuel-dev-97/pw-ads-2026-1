@@ -1,0 +1,64 @@
+/*DESESTRUTURAÇÃO (destructuring) é a operação que torna possível extrair valores individuais a partir de vetores
+e objetos, atribuindo-os a variáveis avulsas*/
+
+//1)DESESTRUTURAÇÃO DE VETOR
+const carros = [ 'Fusca', 'Chevette', 'Opala']
+
+//Desestruturação
+const [c1, c2, c3] = carros
+
+/*
+    sem a desestruturação, seria necessário fazer:
+    const c1 = carros[0]
+    const c2 = carros[1]
+    const c3 = carros[2]
+
+*/
+console.log({c1, c2, c3})
+
+//DESESTRUTURAÇÃO PARCIAL: 1ª E 2ªELEMENTOS
+const [carro1, ,carro3] = carros
+console.log({carro1, carro3})
+
+//Desestruturação parcial: 1ª e 2ª elementos
+const [k1, k2] = carros
+console.log({k1, k2})
+
+//Desestruturação parcial: 2ª e 3ª elementos
+const[, v2, v3] = carros
+console.log({v2,v3})
+
+//problema: troca de calores de variáveis entre si (swap)
+let var1 = 10, var2 = 20
+console.log('ANTES: ', {var1, var2})
+
+//modo clássico de fazer swap(usando uma variável temporária/auxiliar)
+//let aux = var1
+//var1 = var2
+//var2 = aux
+
+//Swap usando desestruturação
+{ [var1,var2] = [var2, var1]}
+console.log('DEPOIS: ', {var1, var2})
+
+console.log('-'.repeat(80))
+
+//2) desestruturação de objetos
+const pessoa = {
+    nome: 'Orkutilson Osório Oliveira',
+    sexo: 'M',
+    dataNasc: '2010-04-29',
+    email: 'orkutilson@gmail.com'
+}
+/*
+    Na desestruturação de objetos, as variáveis avulsas:
+    ~>DEVEM TER O  MESMO NOME DAS PROPRIEDADES DO OBJETO QUE  EXTRAEM
+    ~>PODEM SER ESPECIFICADOS EM QUALQUER ORDEM
+    ~>Pode ser feito a desestruturação parcial
+*/
+const {sexo, nome, email} =  pessoa
+
+console.log('Nome: ', nome)
+console.log('Sexo: ', sexo)
+console.log('E-mail: ', email)
+console.log('XYZ: ', xyz)
