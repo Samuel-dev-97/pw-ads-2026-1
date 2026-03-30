@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sauda {
+            background: rgb(91, 4, 152);
+            border-radius: 8px;
+            color: white;
+            box-shadow: 2px 2px 5px rgb(106, 104, 107);
+            padding: 12px;
+            text-align: center;    
+            font-family: Cambria, serif;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+    
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        /*Em react, os elementos construídos dinamicamente são chamados de COMPONETES e podem ser produzidos por meio de funções
+
+Uma função COMPONENTE no React possui três características:
+
+1~> Seu nome começa com letra maiúscula (Convenção pascalCase)
+
+2~> Podem receber props como parâmetro entre {}
+
+3~> Retornam um único elemento, o qual pode ser um conteiner para outris elementos.
+
+*/
+        //Exemplo de função de componente eme react
+
+
+        function Saudacao ({nome, msg}) {
+            return <div className="sauda">{msg}, {nome}!</div>
+        }
+        //Criando um componente a partir de uma chamada explícita à função
+        const saudacao1 = Saudacao({msg: 'Bom dia', nome: 'Dona Florinda'})
+
+        //Criando um componente a partir da função usando JSX
+        const saudacao2 = <Saudacao nome="Seu Bita" msg="O sol já nasceu lá na fazendinha" />
+
+        /*
+        Conteiner em JSX
+        <></> é um pseudoelemento do Ract, chamado FRAGMENT.Ele permite  agrupar 
+            vários elementos sem criar um elemento HTML adicional (como uma div, por exemplo) no resultado renderizado */
+        const conteiner = (
+            <div>
+                {saudacao1}
+                {saudacao2}
+            </div>
+        )
+
+        // ESSENCIAL: Criar a raiz e renderizar o container na div #root
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(conteiner);
+    
+    </script>
+</body>
+</html>
