@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROVA1 PW</title>
+  <style>
+    .cor-titulo {
+      color: darkred;
+    }
+
+    .cor-preco {
+      color: palevioletred;
+    }
+
+    .cor-estoque {
+      color: darkkhaki;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+    
+    const ComponenteProduto = ({ produto, preco, estoque }) => {
+      return (
+        <>
+          <h1 className="cor-titulo">{produto}</h1>
+          <p className="cor-preco">R$ {preco.toFixed(2)}</p>
+          <p className="cor-estoque">quantidade em estoque: {estoque}</p>
+        </>
+      );
+    };
+
+    const container = (
+      <>
+        <ComponenteProduto produto="Mouse Gamer" preco={150.00} estoque={10} />
+        <ComponenteProduto produto="Teclado Mecânico" preco={320.50} estoque={5} />
+        <ComponenteProduto produto="Monitor 144hz" preco={1200.99} estoque={3} />
+      </>
+    );
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(container);
+
+    /* RACIOCÍNIO UTILIZADO PARA A RESOLUÇÃO:
+       A lógica seguiu a reutilização de código. 
+       1. Estilização: Foram definidas classes CSS vinculadas a nomes específicos de cores da especificação HTMLl.
+       2. Componente: Usei uma Arrow Function com desestruturação de props ({ produto, preco, estoque }), tornando o código mais limpo.
+       3. Fragmentos: O uso de Fragments (<> </>) foi essencial para agrupar múltiplos elementos (h1 e p) sem a necessidade de criar divs desnecessárias no DOM.
+       4.como comando da prova usei o .toFixed(2) para formatação monetária padrão.
+       5. Renderização em Bloco: Seguindo a base de exercícios anteriores, o container foi isolado como uma constante JSX, permitindo a renderização de múltiplos estados do mesmo componente de uma única vez no elemento 'root'.
+    */
+  </script>  
+</body>
+</html>

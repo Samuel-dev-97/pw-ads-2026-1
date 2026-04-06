@@ -28,7 +28,7 @@ console.log({k1, k2})
 const[, v2, v3] = carros
 console.log({v2,v3})
 
-//problema: troca de calores de variáveis entre si (swap)
+//problema: troca de valores de variáveis entre si (swap)
 let var1 = 10, var2 = 20
 console.log('ANTES: ', {var1, var2})
 
@@ -61,4 +61,3 @@ const {sexo, nome, email} =  pessoa
 console.log('Nome: ', nome)
 console.log('Sexo: ', sexo)
 console.log('E-mail: ', email)
-console.log('XYZ: ', xyz)

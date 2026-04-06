@@ -15,7 +15,7 @@ executar: node 02 tab*/
  //==============================================================================
  let user = 'guest', msg
  /*Decidindo se o usuario pode entrar ou não usando if..else
- Quando ha apenas uma linha de código após um if, while, etc.,podemos omitir as chaves */
+ Quando há apenas uma linha de código após um if, while, etc.,podemos omitir as chaves */
  if(user=== 'admin') msg = 'Bem vindo!'
  else msg = 'Acesso negado.'
 

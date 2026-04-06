@@ -81,24 +81,47 @@ console.log({minimo,maximo})
 
 /* Outros usos a sintaxe de espelhamento*/
 
-const carro1={
- modelo: 'Fiorino',
- marca: 'Fiat',
- ano: '1984',
- cor: 'preta'
+// Objeto original
+const carro1 = {
+  modelo: 'Fiorino',
+  marca: 'Fiat',
+  ano: '1984',
+  cor: 'preta'
 }
- //"Copiando" carro1 para carro2
- //para criar uma cópia real de um objeto (e não uma nova referência a ele), podemos usar a sintaxe  de espelhamento
- //ela "desmonta" o objeto original  e, em  seguida, "remonta", mas em uma nova posição de memória
- const carro2 = carro1
 
- //Mudando o valor das propriedades do carro2
- carro2.modelo = 'Fusca'
- carro2.marca = 'Volkswagem'
- carro2.cor = 'Azul'
- carro2.ano = '1989'
- 
- console.log('-'.repeat(80))
- //Exibindo ambos os carros
+// -----------------------------
+// ❌ EXEMPLO 1: REFERÊNCIA
+// -----------------------------
 
- console.log({carro1, carro2})
+// NÃO cria cópia!
+// carro2 passa a apontar para o MESMO objeto que carro1
+const carro2 = carro1
+
+// Alterando carro2...
+carro2.modelo = 'Fusca'
+carro2.marca = 'Volkswagen'
+carro2.cor = 'Azul'
+carro2.ano = '1989'
+
+// Resultado: carro1 TAMBÉM foi alterado 
+console.log('REFERÊNCIA (errado para cópia):')
+console.log({ carro1, carro2 })
+
+console.log('-'.repeat(80))
+
+// -----------------------------
+// ✅ EXEMPLO 2: CÓPIA REAL (SPREAD)
+// -----------------------------
+
+// Criando um novo objeto (cópia independente)
+const carro3 = { ...carro1 }
+
+// Alterando carro3...
+carro3.modelo = 'Civic'
+carro3.marca = 'Honda'
+carro3.cor = 'Prata'
+carro3.ano = '2020'
+
+// Resultado: carro1 NÃO é afetado ✅
+console.log('CÓPIA REAL (correto):')
+console.log({ carro1, carro3 })

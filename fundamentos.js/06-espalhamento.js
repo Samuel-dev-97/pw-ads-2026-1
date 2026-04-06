@@ -33,7 +33,7 @@ maximo = Math.max(...nums)
 console.log('Valores calculados após aplicação do espalhamento no vetor:')
 console.log({minimo, maximo})
 
-/* OUTROS USOS PA A SINTAXE DE ESPALHAMENTO */
+/* OUTROS USOS DA SINTAXE DE ESPALHAMENTO */
 
 const carro1 = {
     modelo: 'fiorino',
@@ -45,7 +45,7 @@ const carro1 = {
 // "Copiando" carro1 para carro2
 //const carro2 = carro1 // NÃO FUNCIONA
 
-//Para criar umacópia real de um objeto (e não uma nova referencia
+//Para criar uma cópia real de um objeto (e não uma nova referencia
 // a ele), podemos usar a sintaxe de espalhamento. ela "desmonta" o
 //objeto original e, em seguida , "remota", mas em uma nova posição
 //de memoria

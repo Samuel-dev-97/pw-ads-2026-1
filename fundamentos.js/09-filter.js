@@ -9,7 +9,7 @@ const frutas = ['laranja', 'abacaxi', 'maçã', 'uva', 'jabuticaba', 'maracuja']
 
 // Cria um novo vetor apenas com os números negativos
 console.log('Apenas números negativos:',
-    numeros.filter(n => n < 0)
+    numeros.filter(n => n < 0)//Filtre todos os números n tais que n seja menor que 0”
 )
 
 // Um novo vetor apenas com os múltiplos de 5
@@ -20,6 +20,7 @@ console.log('Múltiplo de 5:',
 //Um novo vetor apenas com os múltiplos de 5 
 console.log('Múltiplos de 5:', 
     numeros.filter(x => x % 5 === 0)
+    //Filtre todos os números x tais que o resto da divisão de x por 5 seja igual a 0
 )
 
 //novo vetor apenas com números maiores que 20

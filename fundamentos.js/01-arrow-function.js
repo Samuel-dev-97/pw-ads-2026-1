@@ -13,38 +13,38 @@ Função equivalente, usando a sitaxe ARROW FUNCTION:
 -a arrow function é invocada usando o nome da constante que a recebe como valor
 */
 const quadradoA = n => n * n
-console.log('[ARROW] O quadrado de 7 é',quadradoA(7))
+console.log('[01ARROW] O quadrado de 7 é',quadradoA(7))
 /*Função tradicional com mais de um parâmetro e apenas uma linha com return*/
 
 function calc(a, b, c){
     return a * b + c
 
 }
-console.log('[TRADI] o resultado do cálculo é', calc (10, 20, 30))
+console.log('[02TRADI] o resultado do cálculo é', calc (10, 20, 30))
 /*
 Equivalente em sintaxe ARROW FUNCTION
 ~>quando o número de parâmentros é DIFERENTE DE 1, os PARÊNTESES voltam a ser obrigatórios
 */
 const calcA =(a, b, c) => a * b + c
-console. log('[ARROW] o resultado do cálculo é', calcA(10, 20, 30))
+console. log('[03ARROW] o resultado do cálculo é', calcA(10, 20, 30))
 /*Função tradicional sem parâmetro e uma linha de retorno*/
 function msgErro(){
     return "ERRO FATAL!"
 }
-console.log('[TRADI] Mensagem de erro:', msgErro())
+console.log('[04TRADI] Mensagem de erro:', msgErro())
 /*
 Equivalente na sintaxe ARROW FUNCTION
 ~>parênteses vazios devem ser usados para marcar o local do parâmetro
 */
 const msgErroA = () => "ERRO FATAL!"
-console.log('[ARROW] Mensagem de erro:', msgErroA())
+console.log('[05ARROW] Mensagem de erro:', msgErroA())
 /*Função tradicional com um parâmetro e várias linhas no corpo*/
 function fatorial(x){
     let resultado = 1 
     for(let i = x; i> 1; i--) resultado *= i
     return resultado
 }
-console.log('[TRADI] O fatorial de 8 é:', fatorial(8))
+console.log('[06TRADI] O fatorial de 8 é:', fatorial(8))
 
 /*
 Equivalente na sintaxe ARROW FUNCTION
@@ -58,4 +58,4 @@ const fatorialA = x =>{
     return resultado
     
 }
-console.log('[ARROW] O fatorial de 8 é:',fatorialA(8))
+console.log('[07ARROW] O fatorial de 8 é:',fatorialA(8))
